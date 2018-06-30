@@ -1,0 +1,11 @@
+käyttaja->selain:
+note left of selain
+  käyttäjä kirjoittaa sivulla fullstack-exampleapp.herokuapp.com/spa
+  lomakeriville muistiinpanon ja painaa Talleta-nappia 
+end note
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_note_spa
+palvelin->selain: status 201 Created, json
+
+note left of selain
+ selain näyttää päivitetyn muistiinpanolistan
+end note

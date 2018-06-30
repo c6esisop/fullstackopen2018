@@ -1,0 +1,35 @@
+käyttaja->selain:
+note left of selain
+käyttäjä kirjoittaa osoiteriville
+fullstack-exampleapp.herokuapp.com/notes
+end note
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes
+note left of palvelin
+  muodostetaan HTML, jossa näkyy otsikko "Muistiinpanot" ja 
+  lomake, jolla voi tallettaa muistiinpanoja
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/main.css
+note left of palvelin
+  haetaan tyylitiedosto, joka sisältää väriä, reunaviivaa ja
+  sivun elementtien välisiä etäisyyksiä
+end note
+palvelin->selain: status 200, tyylitiedosto
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/main.js
+note left of palvelin
+  haetaan javascript-tiedosto, jossa kerrotaan miten muistiin-
+  panot tulostetaan html-sivulle ja mistä (data.json) ne haetaan
+end note
+palvelin->selain: status 200, javascript
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/data.json
+note left of palvelin
+  haetaan json-tiedoston, jossa on lueteltu muistiinpanojen
+  sisällöt
+end note
+palvelin->selain: status 200, json
+note left of selain
+ selain näyttää palvelimen palauttaman HTML:n, johon on 
+ upotettu javascriptin jsonista poimimat muistiinpanot, ulkonäkö
+ tyylitiedoston perusteella
+end note

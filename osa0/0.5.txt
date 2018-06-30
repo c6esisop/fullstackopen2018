@@ -1,0 +1,36 @@
+käyttaja->selain:
+note left of selain
+  käyttäjä menee selaimella osoitteeseen
+  fullstack-exampleapp.herokuapp.com/spa
+end note
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/spa
+note left of palvelin
+  haetaan spa -html-sivun sisältö eli otsikko ja lomake
+end note
+palvelin->selain: status 200 OK, html
+
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/main.css
+note left of palvelin
+  haetaan sivun tyylitiedosto 
+end note
+palvelin->selain: status 200, css
+
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/spa.js
+note left of palvelin
+  haetaan javascript-tiedosto, jossa kerrotaan miten muistiin-
+  panot tulostetaan html-sivulle ja mistä (data.json) ne haetaan
+end note
+palvelin->selain: status 200, javascript
+
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/data.json
+note left of palvelin
+  haetaan json-tiedosto, jossa on lueteltu muistiinpanojen
+  sisällöt
+end note
+palvelin->selain: status 200, json
+
+note left of selain
+ selain näyttää palvelimen palauttaman HTML:n, johon on 
+ upotettu javascriptin jsonista poimimat muistiinpanot, ulkonäkö
+ tyylitiedoston perusteella
+end note
