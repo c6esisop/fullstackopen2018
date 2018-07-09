@@ -24,7 +24,7 @@ const App = () => {
     const Otsikko = (props) => {
         return (
           <div>
-            <h1>{props.kurssi}</h1>
+            <h1>{props.kurssi.nimi}</h1>
           </div>
         )
     }
@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <div>
-      <Otsikko kurssi={kurssi.nimi} />
+      <Otsikko kurssi={kurssi} />
       <Sisalto kurssi={kurssi} />
       <Yhteensa kurssi={kurssi} />
     </div>
